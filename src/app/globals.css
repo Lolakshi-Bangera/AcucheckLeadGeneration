@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Sarabun';
+}
+
+
+
+.stroke-responsive {
+  -webkit-text-stroke: 0.3px #E0E0E0 !important;
+}
+
+@media (min-width: 1200px) {
+  .stroke-responsive {
+    -webkit-text-stroke: 0.7px #E0E0E0 !important;
+    opacity: 30% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .stroke-responsive {
+    -webkit-text-stroke: 0.7px #E0E0E0 !important;
+    opacity: 0.3 !important;
+  }
+}
+
+
+@media (min-width: 518px) {
+  .stroke-responsive {
+    -webkit-text-stroke: 0.7px #E0E0E0 !important;
+    opacity: 0.3 !important;
+  }
+}
+@media (min-width: 1440px) {
+  .stroke-responsive {
+    -webkit-text-stroke: 0.9px #E0E0E0 !important;
+    opacity: 0.3 !important;
+  }
+}
+
+@font-face {
+  font-family: 'Digital7';
+  src: url('/fonts/Digital7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.digital-clock-numbers {
+  font-family: 'Digital7', monospace;
+  letter-spacing: 2px; /* Optional: for more digital effect */
+}
