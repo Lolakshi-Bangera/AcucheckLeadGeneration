@@ -36,7 +36,7 @@ export default function SneakPeekSection() {
         <div className="text-black/80 text-[21px] font-bold mb-2">Get Started</div>
 
         <h2 className="text-black text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-[1200px]">
-          See how Cash flow affects the customers' ability to pay
+          See how Cash flow affects the customer&apos;s ability to pay
         </h2>
 
         <div className="text-black/90 text-base md:text-lg font-semibold mt-3 mb-6">
