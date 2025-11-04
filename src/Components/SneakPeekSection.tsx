@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function SneakPeekSection() {
-  const router = useRouter();
 
   return (
     <section className="relative w-full flex items-center justify-center min-h-[400px] md:min-h-[520px] overflow-hidden">

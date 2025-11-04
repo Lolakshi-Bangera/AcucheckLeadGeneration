@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const faqs = [
@@ -45,7 +44,6 @@ answer: (
 
 export default function FAQSection() {
   const [open, setOpen] = useState(0);
-   const router = useRouter();
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen bg-white px-4 pb-16">
       {/* Sparkle images as in your code */}

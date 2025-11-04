@@ -7,17 +7,6 @@ import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "moment-timezone";
 
-import {
-  FaUser,
-  FaBuilding,
-  FaBriefcase,
-  FaEnvelope,
-  FaPhone,
-  FaIndustry,
-  FaCommentDots,
-  FaBullhorn,
-} from "react-icons/fa";
-
 interface FormData {
   fullName?: string;
   companyName?: string;
