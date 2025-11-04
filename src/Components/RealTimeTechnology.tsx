@@ -1,98 +1,60 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
-export default function RealTimeTechnology() {
-  const router = useRouter();
-
+export default function RealTimeFinancialData() {
   return (
-    <section className="relative bg-white flex flex-col items-center justify-center w-full overflow-hidden">
-      {/* ======= HEADER (Plane + Title) ======= */}
-      <div className="flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-0 text-center md:text-left z-20">
-        <div className="flex-shrink-0 relative md:left-[-154px] mx-auto md:mx-0 mb-4 md:mb-0">
-          <Image
-            src="/PaperPlane.png"
-            alt="Paper Plane"
-            width={308}
-            height={276}
-            className="object-contain w-full h-full"
-            priority
-          />
-        </div>
+    <section className="relative w-full overflow-hidden bg-white sm:min-h-[360px] md:min-h-[560px] lg:min-h-[800px] 2xl:min-h-[970px] ">
+      {/* Full-bleed background video covering the whole section */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        // ensure video fills the section and is behind everything
+        className="absolute inset-0 w-full h-full object-contain object-bottom xl:object-cover z-0"
+      >
+        <source src="/Realtime_bg.webm" type="video/webm" />
+        {/* Optional fallback if browser doesn't support webm */}
+        {/* <source src="/Realtime_bg.mp4" type="video/mp4" /> */}
+      </video>
 
-        <h1 className="text-[26px] sm:text-[30px] md:text-[40px] lg:text-[50px] font-bold text-black leading-tight md:leading-snug ">
-          Real-Time Financial Data + Advanced Analysis
-        </h1>
+
+      {/* Paper Plane (top-right) */
+      /* Keep it interactive off so clicks pass through, if desired */ }
+      <div className="absolute -top-2 -left-12 w-12 h-12 md:w-56 md:h-66 z-30 pointer-events-none">
+        <Image src="/PaperPlane.png" alt="Paper Plane" fill className="object-contain" />
       </div>
+ {/* ===== Centered Heading ===== */}
+      <div className="relative z-40 text-center px-6 mt-10 xl:pt-16">
+        <h2 className="text-3xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-black ">
+          Real-Time Financial Data + Advanced Analysis
+        </h2>
+      </div>
+      {/* Content container — placed above video and overlay */}
+      <div className="relative z-40 max-w-[2560px]  px-6 md:pr-12 pb-48 sm:pb-36 md:py-24 flex flex-col md:flex-row items-center justify-between">
+        {/* Left content */}
+        <div className="md:w-1/3 max-w-[260px] xl:max-w-lg text-left text-black xl:mt-30 xl:ml-35">
+         
 
-      {/* ======= MAIN SECTION WITH BACKGROUND VIDEO ======= */}
-      <div className="relative flex flex-col md:flex-row justify-between px-6  md:pb-14  max-w-[2600px] w-[100vw] h-[100vh] z-10">
-        {/* 🎥 Background video */}
-        <video
-          src="/Realtime_bg.webm"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-contain -z-10 opacity-100"
-        />
-
-        {/* ===== LEFT TEXT CONTENT ===== */}
-        <div className="w-full md:w-[40%] flex flex-col items-center md:items-start justify-center text-center md:text-left ">
-          <p className="text-[18px] sm:text-[20px] font-bold text-black mt-4">
-            AcuCheck transforms raw bank data into clean,
-            <br className="hidden md:block" />
-            actionable intelligence.
+          <p className="mt-6 text-base md:text-lg font-semibold text-gray-900">
+            AcuCheck transforms raw bank data into clean, actionable intelligence.
           </p>
 
-          <p className="text-[16px] sm:text-[18px] text-[#000000B2] mt-3">
-            From real-time income tracking and spending analysis to fraud alerts and loan stacking detection,
-            AcuCheck empowers you with smarter underwriting designed for real-world lending.
+          <p className="mt-3 text-sm md:text-base text-gray-700/90">
+            From real-time income tracking and spending analysis to fraud alerts
+            and loan stacking detection, AcuCheck empowers you with smarter
+            underwriting designed for real-world lending.
           </p>
 
-          <button
-            onClick={() => router.push("/under-renovation")}
-            className="inline-block mt-6 bg-[#5983E2] text-white font-bold px-8 py-4 rounded-full w-[200px] sm:w-[200px] text-center mb-2.5 shadow-[0_2px_20px_0_rgba(0,0,0,0.1)]"
-          >
+          <button className="mt-6 px-6 py-2 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium">
             Get Started Today
           </button>
         </div>
 
-        {/* ===== RIGHT SIDE VISUAL (Video/Card) ===== */}
-        <div className="md:w-1/2 w-full flex flex-col items-center relative md:mt-0 overflow-visible">
-          <div className="relative w-full h-full flex items-end justify-end">
-            {/* The /Card_bg.webm — placed absolutely and IN FRONT of the background video */}
-            <video
-              src="/Card_bg.webm"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={`
-                absolute
-                z-20
-                pointer-events-none
-                md:right-[-5%] lg:right-[-10%] xl:right-[-2%]         /* shift slightly beyond container to the right */
-               md:bottom-[22%]  lg:bottom-[18%]   xl:bottom-[-13%]        /* lift so it sits over the tablet area */
-                w-[180px] h-[180px] /* base mobile size */
-                sm:w-[260px] sm:h-[260px]
-                md:w-[980px] md:h-[380px]
-                lg:w-[1320px] lg:h-h-[920px]
-                xl:w-[1320px] xl:h-[920px]
-                object-contain
-                transform
-                translate-x-0
-                translate-y-0
-                
-              `}
-            />
-
-            {/* If you were previously rendering the man as a separate image, remove it.
-                The man is inside Realtime_bg.webm (background), so we do NOT overlay an Image here.
-                If you still have a separate man png, keep it with a lower z-index (z-10). */}
-          </div>
-        </div>
+        {/* Right spacer (keeps layout like Figma) */}
+        <div className="md:w-2/3 hidden md:block" aria-hidden="true" />
       </div>
     </section>
   );
